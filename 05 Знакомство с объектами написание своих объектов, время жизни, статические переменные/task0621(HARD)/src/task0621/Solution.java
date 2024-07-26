@@ -48,35 +48,60 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        String motherName = reader.readLine();
-        Cat catMother = new Cat(motherName);
-
+//        String motherName = reader.readLine();
+//        Cat catMother = new Cat(motherName);
+//
+//        String daughterName = reader.readLine();
+//        Cat catDaughter = new Cat(daughterName, catMother);
+//
+//        System.out.println(catMother);
+//        System.out.println(catDaughter);
         String daughterName = reader.readLine();
-        Cat catDaughter = new Cat(daughterName, catMother);
+        String sonName = reader.readLine();
+        String matherName = reader.readLine();
+        String fatherName = reader.readLine();
+        String grandFatherName = reader.readLine();
+        String grandMatherName = reader.readLine();
 
-        System.out.println(catMother);
-        System.out.println(catDaughter);
+        Cat grandFather = new Cat(grandMatherName);
+
+        System.out.println();
+
+
+
     }
 
     public static class Cat {
         private String name;
-        private Cat parent;
+        private Cat mather;
+        private Cat father;
 
         Cat(String name) {
             this.name = name;
         }
 
-        Cat(String name, Cat parent) {
+        public Cat (String name, Cat mather, Cat father) {
             this.name = name;
-            this.parent = parent;
+            this.mather = mather;
+            this.father = father;
         }
 
         @Override
         public String toString() {
-            if (parent == null)
-                return "The cat's name is " + name + ", no mother ";
-            else
-                return "The cat's name is " + name + ", mother is " + parent.name;
+            String str = "The cat's name is " + name;
+
+            if (this.mather != null){
+                str += ", mother is " + mather.name;
+            }else {
+                str += " no mother";
+            }
+
+            if (this.father != null){
+                str += ", father is " + father.name;
+            }else {
+                str += " no father";
+            }
+            return str;
         }
     }
 

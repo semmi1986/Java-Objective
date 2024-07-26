@@ -12,15 +12,25 @@ Requirements:
 4. Метод finalize класса Dog должен выводить на экран "A Dog was destroyed".
 5. Метод main должен создавать 50000 объектов типа Cat и 50000 объектов типа Dog.*/
 
+import java.util.Arrays;
+
 public class Solution {
     public static void main(String[] args) {
         // напишите тут ваш код
+        Cat[] arrCat = new Cat[50000];
+        Dog[] arrDog = new Dog[50000];
+
+        for (int i = 0; i <50000; i++) {
+            arrCat[i] = new Cat();
+            arrDog[i] = new Dog();
+        }
+//        System.out.println(Arrays.toString(arrCat));
     }
 }
 
 class Cat {
     @Override
-    protected void finalize() throws Throwable {
+     protected void finalize() throws Throwable {
         super.finalize();
         System.out.println("A Cat was destroyed");
     }

@@ -30,5 +30,25 @@ public class Solution {
 
     public static void main(String[] args) throws IOException {
         //напишите тут ваш код
+
+        BufferedReader integer = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter integer");
+        String strInt = integer.readLine();
+
+        int num;
+
+        for (int i = 0; i < strInt.length(); i++) {
+            num=Integer.parseInt(String.valueOf(strInt.charAt(i)));
+
+            if (num % 2 == 0) {
+                even += 1;
+            }else{
+                odd += 1;
+            }
+        }
+
+        System.out.println("Even: " + even + " Odd: " + odd);
+
+
     }
 }
