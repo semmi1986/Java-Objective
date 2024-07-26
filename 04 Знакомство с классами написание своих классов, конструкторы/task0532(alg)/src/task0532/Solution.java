@@ -22,10 +22,23 @@ Requirements:
 public class Solution {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int maximum = ;
+        int maximum;
+        System.out.println("Введи число");
+        int initNumber = Integer.parseInt(reader.readLine());
+        if (initNumber <= 0) {
+            return;
+        }else {
+            int inputNumber;
+            maximum = initNumber;
+            for (int i = 0; i < initNumber; i++) {
+                System.out.println("Введи число еще " + (initNumber-i) + " раз");
+                inputNumber = Integer.parseInt(reader.readLine());
+                if (inputNumber > maximum) {
+                    maximum = inputNumber;
+                }
+            }
+        }
 
-        //напишите тут ваш код
-
-        System.out.println(maximum);
+        System.out.println("Максимальное число введенных из " + initNumber + " раз равно: " + maximum );
     }
 }

@@ -24,6 +24,8 @@ Requirements:
 public class Solution {
     public static void main(String[] args) {
         Mouse jerryMouse = new Mouse("Jerry", 12, 5);
+        Cat tomCat = new Cat("Tom", "blue", 5);
+        Dog pupsDog = new Dog("Papi", true, 4);
 
         //напишите тут ваш код
     }
@@ -41,4 +43,28 @@ public class Solution {
     }
 
     //напишите тут ваш код
+
+    public static class Dog{
+        String name;
+        boolean wicked;
+        int teeth;
+
+        public Dog(String name, boolean wicked, int teeth) {
+            this.name = name;
+            this.wicked = wicked;
+            this.teeth = teeth;
+        }
+    }
+
+    public static class Cat {
+        String name;
+        String color;
+        int weight;
+
+        public Cat(String name, String color, int weight) {
+            this.name = name;
+            this.color = color;
+            this.weight = weight;
+        }
+    }
 }

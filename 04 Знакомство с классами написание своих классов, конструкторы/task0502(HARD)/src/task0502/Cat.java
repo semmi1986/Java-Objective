@@ -25,11 +25,51 @@ public class Cat {
     public Cat() {
     }
 
+
     public boolean fight(Cat anotherCat) {
         //напишите тут ваш код
+        int countWinThisCat = 0;
+        int countWinAnotherCat = 0;
+
+
+        if (this.age > anotherCat.age) {
+            countWinThisCat++;
+        } else if(this.age < anotherCat.age) {
+            countWinAnotherCat++;
+        }
+
+
+        if (this.weight > anotherCat.weight) {
+            countWinThisCat++;
+        } else if (this.weight < anotherCat.weight){
+            countWinAnotherCat++;
+        }
+
+
+        if (this.strength > anotherCat.strength) {
+            countWinThisCat++;
+        } else if (this.strength < anotherCat.strength) {
+            countWinAnotherCat++;
+        }
+
+
+        return countWinThisCat > countWinAnotherCat;
+
     }
 
     public static void main(String[] args) {
+        Cat cat1 = new Cat();
+        cat1.age=5;
+        cat1.strength= 5;
+        cat1.weight=15;
+
+        Cat cat2 = new Cat();
+        cat2.age=3;
+        cat2.strength= 6;
+        cat2.weight=10;
+
+        System.out.println(cat1.fight(cat2));
+        System.out.println(cat2.fight(cat1));
 
     }
 }

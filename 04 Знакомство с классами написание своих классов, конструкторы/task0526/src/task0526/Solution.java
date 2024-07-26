@@ -21,7 +21,59 @@ Requirements:
 public class Solution {
     public static void main(String[] args) {
         //напишите тут ваш код
+
+        Man man1 = new Man("John", 35, "China");
+        Man man2 = new Man("Bob", 36, "Cuba");
+        System.out.println(man1.getInfoMan());
+        System.out.println(man2.getInfoMan());
+        System.out.println("---------------------------------------");
+        Woman woman1 = new Woman("Tom", 30, "Thailand");
+        Woman woman2 = new Woman("Make", 32, "Thailand");
+        System.out.println(woman1.getInfoWomen());
+        System.out.println(woman2.getInfoWomen());
+
+
     }
 
     //напишите тут ваш код
-}
+
+
+
+    public static class Person{
+        private  String name;
+        private int age;
+        private String address;
+
+        public Person(String name, int age, String address) {
+            this.name = name;
+            this.age = age;
+            this.address = address;
+        }
+
+        public String getInfoPerson(){
+            return name + " " + age + " " + address;
+        }
+    }
+
+
+    public static class Man extends Person{
+        public Man(String name, int age, String address) {
+            super(name, age, address);
+        }
+
+        public String getInfoMan(){
+            return "I strong Man " + getInfoPerson();
+        }
+    }
+
+    public static class Woman extends Person {
+        public Woman(String name, int age, String address) {
+            super(name, age, address);
+            }
+
+            public String getInfoWomen(){
+                return "I small Man " + getInfoPerson();
+            }
+        }
+    }
+
