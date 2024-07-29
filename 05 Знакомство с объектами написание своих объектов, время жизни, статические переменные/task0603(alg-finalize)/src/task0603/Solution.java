@@ -17,10 +17,10 @@ import java.util.Arrays;
 public class Solution {
     public static void main(String[] args) {
         // напишите тут ваш код
-        Cat[] arrCat = new Cat[50000];
-        Dog[] arrDog = new Dog[50000];
+        Cat[] arrCat = new Cat[500000];
+        Dog[] arrDog = new Dog[500000];
 
-        for (int i = 0; i <50000; i++) {
+        for (int i = 0; i <500000; i++) {
             arrCat[i] = new Cat();
             arrDog[i] = new Dog();
         }

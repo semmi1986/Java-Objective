@@ -56,16 +56,38 @@ public class Solution {
 //
 //        System.out.println(catMother);
 //        System.out.println(catDaughter);
-        String daughterName = reader.readLine();
-        String sonName = reader.readLine();
-        String matherName = reader.readLine();
-        String fatherName = reader.readLine();
+
         String grandFatherName = reader.readLine();
-        String grandMatherName = reader.readLine();
+        String grandMotherName = reader.readLine();
+        String fatherName = reader.readLine();
+        String motherName = reader.readLine();
+        String sonName = reader.readLine();
+        String dauhterName = reader.readLine();
 
-        Cat grandFather = new Cat(grandMatherName);
 
-        System.out.println();
+
+        Cat grandFather = new Cat (grandFatherName,null,null);
+        Cat grandMother = new Cat (grandMotherName,null,null);
+        Cat father = new Cat (fatherName,null,grandFather);
+        Cat mother = new Cat (motherName,grandMother,null);
+        Cat son = new Cat (sonName,mother,father);
+        Cat dauhter = new Cat (dauhterName,mother,father);
+
+        System.out.println("дедушка " + grandFather.name);
+        System.out.println("бабушка " + grandMother.name);
+        System.out.println("папа " + father.name);
+        System.out.println("мама " + mother.name);
+        System.out.println("Cын " + son.name);
+        System.out.println("дочь " + dauhter.name);
+
+        System.out.println("-------------------------------------------");
+
+        System.out.println(grandFather);
+        System.out.println(grandMother);
+        System.out.println(father);
+        System.out.println(mother);
+        System.out.println(son);
+        System.out.println(dauhter);
 
 
 
